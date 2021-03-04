@@ -66,20 +66,20 @@
     state: "restarted"
     enabled: "yes"
 
-- name: "Check if firewalld installed"
-  become: true
-  command: "systemctl status firewalld"
-  register: firewalld_result
-  ignore_errors: true
-
-- name: "Open firewall for httpd"
-  become: true
-  firewalld:
-    port: "{{ icinga2_web.httpd.port | default('80') }}/tcp"
-    permanent: "yes"
-    immediate: "yes"
-    state: "enabled"
-  when: firewalld_result.rc == 0
+#- name: "Check if firewalld installed"
+#  become: true
+#  command: "systemctl status firewalld"
+#  register: firewalld_result
+#  ignore_errors: true
+#
+#- name: "Open firewall for httpd"
+#  become: true
+#  firewalld:
+#    port: "{{ icinga2_web.httpd.port | default('80') }}/tcp"
+#    permanent: "yes"
+#    immediate: "yes"
+#    state: "enabled"
+#  when: firewalld_result.rc == 0
 
 - name: "Setup config directory"
   become: true
