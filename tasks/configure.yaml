@@ -1,0 +1,7 @@
+- name: "Enable icinga features"
+  become: true
+  shell: "icinga2 feature enable api command ido-mysql"
+
+- name: "Run icinga2 api setup to generate keys"
+  become: true
+  shell: "icinga2 api setup"

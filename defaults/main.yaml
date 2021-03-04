@@ -1,0 +1,14 @@
+icinga2_web:
+  httpd:
+    port: "9999"
+  modules:
+    - { name: "director", version: "v1.7.2" }
+    - { name: "businessprocess", version: "v2.3.0" }
+    - { name: "reactbundle", version: "v0.7.0" }
+    - { name: "incubator", version: "v0.5.0" }
+    - { name: "ipl", version: "v0.5.0" }
+  mysql:
+    host: "2.0.1.101"
+    port: "3306"
+    user: "root"
+    password: "root"
