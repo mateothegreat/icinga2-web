@@ -81,9 +81,13 @@
 #    state: "enabled"
 #  when: firewalld_result.rc == 0
 
+- name: "Enable setup module"
+  become: true
+  shell: "icingacli module enable setup"
+
 - name: "Setup config directory"
   become: true
-  shell: "icingacli setup config directory --group icingaweb2;"
+  shell: "icingacli setup config directory --group icingaweb2"
 
 - name: "Get setup token"
   become: true
